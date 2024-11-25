@@ -3,6 +3,7 @@
 #include <string.h>
 
 #define MAX_ITENS 100000
+#define MAX_USERS 20
 
 // tipo de dados itens
 
@@ -19,6 +20,58 @@ typedef struct {
 Item inventario[MAX_ITENS];
 int num_itens = 0;
 
+typedef struct {
+        char codigo[9];
+        int pin;
+    }login;
+
+login usuarios[MAX_USERS];
+int num_users = 0;
+
+//ele preenche o vetor usuarios
+void users(const char *nomeArquivo){
+
+    FILE *file = fopen(nomeArquivo, "r");
+    if (!file) {
+        printf("Erro ao abrir o arquivo CSV.\n");
+        return;
+    }
+
+    while (fscanf(file, "%8[^;];%d", usuarios[num_users].codigo, &usuarios[num_users].pin) == 2) {
+        num_users++;
+    }
+
+    fclose(file);
+}
+
+int initLogin() {
+    char loginUser[9];
+    int pin;
+
+    printf("=== Bem-Vindo! ===\n");
+
+    printf("\nDigite seu Login de acesso: ");
+    fgets(loginUser, sizeof(loginUser), stdin);
+    loginUser[strcspn(loginUser, "\n")] = '\0'; // Remove o '\n' ao final da entrada
+
+    printf("Digite sua senha de acesso: ");
+    scanf("%d", &pin);
+
+    // Verifica credenciais
+    int i;
+    for (i = 0; i < num_users; i++) {
+        if (strcmp(loginUser, usuarios[i].codigo) == 0 && pin == usuarios[i].pin) {
+            printf("Login Bem-sucedido!\n");
+            exibirMenu();
+            return 1; // Login bem-sucedido
+        }
+    }
+
+    // Caso falhe
+    printf("Login ou senha invalidos.\n");
+    return 0;
+}
+
 // carregar dados do arquivo CSV
 void carregarDados(const char *nomeArquivo) {
     FILE *file = fopen(nomeArquivo, "r");
@@ -28,14 +81,14 @@ void carregarDados(const char *nomeArquivo) {
     }
 
     // lê o CSV e preenche o inventario
-    while (fscanf(file, "%d,%49[^,],%29[^,],%d,%49[^,],%19[^,],%10[^\n]",
+    while (fscanf(file, "%d,%49[^;],%29[^;],%d,%49[^;],%19[^;],%10[^\n]",
                   &inventario[num_itens].codigo,
                   inventario[num_itens].nome,
                   inventario[num_itens].categoria,
                   &inventario[num_itens].quantidade,
                   inventario[num_itens].localizacao,
                   inventario[num_itens].estado,
-                  inventario[num_itens].data_aquisicao) == 7) {
+                  inventario[num_itens].data_aquisicao) == 7) { // 7 é numero de propiedades no struct
         num_itens++;
     }
 
@@ -68,20 +121,20 @@ void salvarDados(const char *nomeArquivo) {
 // para cadastrar novos itens
 void cadastrarItem() {
     if (num_itens >= MAX_ITENS) {
-        printf("O inventário está cheio. Não é possível adicionar mais itens.\n");
+        printf("O inventario esta cheio. Não eh possivel adicionar mais itens.\n");
         return;
     }
 
     Item novo_item;
 
     printf("=== Cadastro de Novo Item ===\n");
-    printf("Código do item: ");
+    printf("Codigo do item: ");
     scanf("%d", &novo_item.codigo);
 
     int i;
     for (i = 0; i < num_itens; i++) {
         if (inventario[i].codigo == novo_item.codigo) {
-            printf("Erro: Já existe um item com este código.\n");
+            printf("Erro: Ja existe um item com este codigo.\n");
             return;
         }
     }
@@ -92,11 +145,11 @@ void cadastrarItem() {
     scanf(" %[^\n]", novo_item.categoria);
     printf("Quantidade: ");
     scanf("%d", &novo_item.quantidade);
-    printf("Localização: ");
+    printf("Localizacao: ");
     scanf(" %[^\n]", novo_item.localizacao);
     printf("Estado (funcional/em reparo): ");
     scanf(" %[^\n]", novo_item.estado);
-    printf("Data de aquisição (YYYY-MM-DD): ");
+    printf("Data de aquisicao (YYYY-MM-DD): ");
     scanf(" %[^\n]", novo_item.data_aquisicao);
 
     // Adiciona o item no inventário
@@ -110,16 +163,16 @@ void cadastrarItem() {
 void buscarItem() {
     int opcao;
     printf("=== Buscar Item ===\n");
-    printf("1. Buscar por código\n");
+    printf("1. Buscar por codigo\n");
     printf("2. Buscar por categoria\n");
-    printf("3. Buscar por localização\n");
-    printf("Escolha uma opção: ");
+    printf("3. Buscar por localizacao\n");
+    printf("Escolha uma opcao: ");
     scanf("%d", &opcao);
 
     switch (opcao) {
         case 1: {
             int codigo;
-            printf("Digite o código do item: ");
+            printf("Digite o codigo do item: ");
             scanf("%d", &codigo);
 
             int encontrado = 0;
@@ -127,7 +180,7 @@ void buscarItem() {
             for (i = 0; i < num_itens; i++) {
                 if (inventario[i].codigo == codigo) {
                     printf("Item encontrado:\n");
-                    printf("Código: %d\nNome: %s\nCategoria: %s\nQuantidade: %d\nLocalização: %s\nEstado: %s\nData de aquisição: %s\n",
+                    printf("Codigo: %d\nNome: %s\nCategoria: %s\nQuantidade: %d\nLocalizacao: %s\nEstado: %s\nData de aquisição: %s\n",
                            inventario[i].codigo, inventario[i].nome, inventario[i].categoria,
                            inventario[i].quantidade, inventario[i].localizacao, inventario[i].estado,
                            inventario[i].data_aquisicao);
@@ -136,7 +189,7 @@ void buscarItem() {
                 }
             }
             if (!encontrado) {
-                printf("Item com código %d não encontrado.\n", codigo);
+                printf("Item com codigo %d nao encontrado.\n", codigo);
             }
             break;
         }
@@ -151,7 +204,7 @@ void buscarItem() {
             int i;
             for (i = 0; i < num_itens; i++) {
                 if (strcmp(inventario[i].categoria, categoria) == 0) {
-                    printf("Código: %d, Nome: %s, Quantidade: %d, Localização: %s, Estado: %s\n",
+                    printf("Codigo: %d, Nome: %s, Quantidade: %d, Localizacao: %s, Estado: %s\n",
                            inventario[i].codigo, inventario[i].nome, inventario[i].quantidade,
                            inventario[i].localizacao, inventario[i].estado);
                     encontrado = 1;
@@ -165,15 +218,15 @@ void buscarItem() {
 
         case 3: {
             char localizacao[50];
-            printf("Digite a localização: ");
+            printf("Digite a localizacao: ");
             scanf(" %[^\n]", localizacao);
 
-            printf("Itens na localização '%s':\n", localizacao);
+            printf("Itens na localizacao '%s':\n", localizacao);
             int encontrado = 0;
             int i;
             for (i = 0; i < num_itens; i++) {
                 if (strcmp(inventario[i].localizacao, localizacao) == 0) {
-                    printf("Código: %d, Nome: %s, Categoria: %s, Quantidade: %d, Estado: %s\n",
+                    printf("Codigo: %d, Nome: %s, Categoria: %s, Quantidade: %d, Estado: %s\n",
                            inventario[i].codigo, inventario[i].nome, inventario[i].categoria,
                            inventario[i].quantidade, inventario[i].estado);
                     encontrado = 1;
@@ -186,16 +239,16 @@ void buscarItem() {
         }
 
         default:
-            printf("Opção inválida. Tente novamente.\n");
+            printf("Opcao invalida. Tente novamente.\n");
             break;
     }
 }
 
 // mostrar relatorios (exibe todos os dados do inventario
 void exibirRelatorio() {
-    printf("=== Relatório de Patrimônio ===\n");
+    printf("\n=== Relatorio de Patrimonio ===\n");
     printf("%-10s %-20s %-15s %-10s %-20s %-15s %-12s\n",
-           "Código", "Nome", "Categoria", "Qtd", "Localização", "Estado", "Data");
+           "Codigo", "Nome", "Categoria", "Qtd", "Localizacao", "Estado", "Data");
     printf("----------------------------------------------------------------------------------\n");
 
     int i;
@@ -207,6 +260,44 @@ void exibirRelatorio() {
     }
 }
 
+void alterarItem(){
+    int codigo;
+    printf("Digite o codigo do item que voce deseja alterar: ");
+            scanf("%d", &codigo);
+
+            int a = 0;
+            int i;
+            for (i = 0; i < num_itens; i++) {
+                if (inventario[i].codigo == codigo) {
+
+                    a = 1;
+                    printf("Nome do item: ");
+                    scanf(" %[^\n]", inventario[i].nome);
+                    printf("Categoria: ");
+                    scanf(" %[^\n]", inventario[i].categoria);
+                    printf("Quantidade: ");
+                    scanf("%d", &inventario[i].quantidade);
+                    printf("Localizacao: ");
+                    scanf(" %[^\n]", inventario[i].localizacao);
+                    printf("Estado (funcional/em reparo): ");
+                    scanf(" %[^\n]", inventario[i].estado);
+                    printf("Data de aquisicao (YYYY-MM-DD): ");
+                    scanf(" %[^\n]", inventario[i].data_aquisicao);
+
+                    printf("Item Alterado: \n");
+                    printf("Codigo: %d\nNome: %s\nCategoria: %s\nQuantidade: %d\nLocalizacao: %s\nEstado: %s\nData de aquisição: %s\n",
+                           inventario[i].codigo, inventario[i].nome, inventario[i].categoria,
+                           inventario[i].quantidade, inventario[i].localizacao, inventario[i].estado,
+                           inventario[i].data_aquisicao);
+                }
+            }
+
+    if (!a) {
+    printf("Item com codigo %d não encontrado.\n", codigo);
+    }
+
+}
+
 // menu inicial (provisorio -  implementar GUI)
 void exibirMenu() {
     int opcao;
@@ -216,7 +307,8 @@ void exibirMenu() {
         printf("1. Cadastrar Novo Item\n");
         printf("2. Buscar Item\n");
         printf("3. Exibir Relatorio\n");
-        printf("4. Salvar e Sair\n");
+        printf("4. Alterar Item\n");
+        printf("5. Salvar e Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 
@@ -230,18 +322,28 @@ void exibirMenu() {
             case 3:
                 exibirRelatorio();
                 break;
-            case 4:
+            case 5:
                 salvarDados("inventario.csv");
                 printf("Dados salvos e programa encerrado.\n");
                 break;
+            case 4:
+                alterarItem();
+                break;
             default:
-                printf("Opção inválida. Tente novamente.\n");
+                printf("Opção invalida. Tente novamente.\n");
         }
-    } while (opcao != 4);
+    } while (opcao != 5);
 }
 
 int main() {
     carregarDados("inventario.csv");
-    exibirMenu();
+    users("cadUsers.csv");
+
+    int login_sucesso;
+    do {
+            login_sucesso = initLogin();
+
+    } while(login_sucesso == 0);
+
     return 0;
 }
