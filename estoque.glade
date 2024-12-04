@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="JanelaFiltros">
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkFixed">
+        <property name="width-request">400</property>
+        <property name="height-request">500</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">100</property>
+            <property name="height-request">40</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Filtros</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">220</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="F_Ti">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">186</property>
+            <property name="y">35</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="F_Ma">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">186</property>
+            <property name="y">71</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="F_Mo">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">186</property>
+            <property name="y">107</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="F_De">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">186</property>
+            <property name="y">142</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="F_No">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">186</property>
+            <property name="y">177</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="F_NS">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">186</property>
+            <property name="y">214</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="F_NP">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">186</property>
+            <property name="y">254</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="F_St">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">187</property>
+            <property name="y">329</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="F_Al">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">186</property>
+            <property name="y">292</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">41</property>
+            <property name="height-request">21</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Tipo:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">144</property>
+            <property name="y">42</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">55</property>
+            <property name="height-request">21</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Marca:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">129</property>
+            <property name="y">78</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">65</property>
+            <property name="height-request">21</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Modelo:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">118</property>
+            <property name="y">113</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">47</property>
+            <property name="height-request">21</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Novo:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">138</property>
+            <property name="y">184</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">84</property>
+            <property name="height-request">21</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Descricao:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">103</property>
+            <property name="y">150</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">70</property>
+            <property name="height-request">21</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">N. Serie:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">116</property>
+            <property name="y">221</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">118</property>
+            <property name="height-request">21</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">N. Patrimonio:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">64</property>
+            <property name="y">261</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">78</property>
+            <property name="height-request">21</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Alocacao:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">104</property>
+            <property name="y">301</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">58</property>
+            <property name="height-request">22</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Status:</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">122</property>
+            <property name="y">340</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">APLICAR</property>
+            <property name="width-request">120</property>
+            <property name="height-request">50</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="click_filtros" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">215</property>
+            <property name="y">384</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="JanelaGerenciamento">
+    <property name="width-request">500</property>
+    <property name="height-request">300</property>
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">207</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Gerenciamento de contas</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">149</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">100</property>
+            <property name="height-request">40</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Mudar PIN</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Bold 10"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">87</property>
+            <property name="y">79</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">100</property>
+            <property name="height-request">40</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Criar conta</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Bold 10"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">307</property>
+            <property name="y">78</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="Ent_APin">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="visibility">False</property>
+            <property name="placeholder-text" translatable="yes">Insira seu PIN atual</property>
+          </object>
+          <packing>
+            <property name="x">51</property>
+            <property name="y">107</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="Ent_NPin">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="visibility">False</property>
+            <property name="placeholder-text" translatable="yes">Insira seu novo PIN</property>
+          </object>
+          <packing>
+            <property name="x">51</property>
+            <property name="y">149</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="Ent_NUsr">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="placeholder-text" translatable="yes">Insira o usuario</property>
+          </object>
+          <packing>
+            <property name="x">266</property>
+            <property name="y">109</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="Ent_NUPin">
+            <property name="width-request">168</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="placeholder-text" translatable="yes">Insira o PIN</property>
+          </object>
+          <packing>
+            <property name="x">267</property>
+            <property name="y">149</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="ButMudarPin">
+            <property name="label" translatable="yes">Mudar pin</property>
+            <property name="width-request">100</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="mudar_pin" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">77</property>
+            <property name="y">214</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="ButCriarConta">
+            <property name="label" translatable="yes">Criar conta</property>
+            <property name="width-request">100</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="criar_conta" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">289</property>
+            <property name="y">216</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="JanelaLogin">
+    <property name="width-request">500</property>
+    <property name="height-request">250</property>
+    <property name="can-focus">False</property>
+    <signal name="destroy" handler="login_destroy" swapped="no"/>
+    <child>
+      <object class="GtkFixed">
+        <property name="width-request">500</property>
+        <property name="height-request">250</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkButton" id="ButaoLogin">
+            <property name="label" translatable="yes">ENTRAR</property>
+            <property name="width-request">200</property>
+            <property name="height-request">40</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="tentaiva_login" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">235</property>
+            <property name="y">190</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="TextoLoginTopo">
+            <property name="width-request">600</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">CONTROLE DE ESTOQUE | POLI - UPE</property>
+            <property name="justify">center</property>
+            <property name="width-chars">100</property>
+            <property name="max-width-chars">100</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Bold 20"/>
+              <attribute name="scale" value="1"/>
+            </attributes>
+          </object>
+        </child>
+        <child>
+          <object class="GtkFixed" id="BlocoUsuario">
+            <property name="width-request">270</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkLabel" id="TexotUsuario">
+                <property name="width-request">100</property>
+                <property name="height-request">30</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Usuário:</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans Bold 15"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="y">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="EntradaUsuario">
+                <property name="width-request">200</property>
+                <property name="height-request">34</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="max-width-chars">30</property>
+                <property name="placeholder-text" translatable="yes">Insira seu usuário aqui</property>
+              </object>
+              <packing>
+                <property name="x">99</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">140</property>
+            <property name="y">80</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed" id="BlocoPIN">
+            <property name="width-request">100</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkLabel" id="TextoPIN">
+                <property name="width-request">100</property>
+                <property name="height-request">30</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">end</property>
+                <property name="label" translatable="yes">PIN:</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans Bold 15"/>
+                </attributes>
+              </object>
+            </child>
+            <child>
+              <object class="GtkEntry" id="EntradaPIN">
+                <property name="width-request">200</property>
+                <property name="height-request">34</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="max-length">9</property>
+                <property name="visibility">False</property>
+                <property name="max-width-chars">9</property>
+                <property name="placeholder-text" translatable="yes">Insira seu PIN aqui</property>
+                <property name="input-purpose">pin</property>
+              </object>
+              <packing>
+                <property name="x">99</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">140</property>
+            <property name="y">120</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="LoginIncorreto">
+            <property name="width-request">200</property>
+            <property name="height-request">40</property>
+            <property name="can-focus">False</property>
+            <property name="halign">end</property>
+            <property name="label" translatable="yes">Usuário ou senha incorretos!</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Bold 9"/>
+              <attribute name="foreground" value="#eded33333b3b"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">234</property>
+            <property name="y">152</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="JanelaPrincipal">
+    <property name="width-request">1280</property>
+    <property name="height-request">720</property>
+    <property name="can-focus">False</property>
+    <signal name="destroy" handler="princ_destroy" swapped="no"/>
+    <child>
+      <object class="GtkFixed" id="PrincFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkButton" id="ButaoSairPrinc">
+            <property name="label" translatable="yes">SAIR</property>
+            <property name="width-request">200</property>
+            <property name="height-request">40</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="sair_princ" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">1062</property>
+            <property name="y">12</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="TextoLoginTopo1">
+            <property name="width-request">600</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">CONTROLE DE ESTOQUE | POLI - UPE</property>
+            <property name="justify">center</property>
+            <property name="width-chars">100</property>
+            <property name="max-width-chars">100</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans-Serif Bold 20"/>
+              <attribute name="scale" value="1"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">341</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="width-request">1280</property>
+            <property name="height-request">440</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="hscrollbar-policy">never</property>
+            <property name="vscrollbar-policy">always</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkViewport">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkListBox" id="Planilha">
+                    <property name="width-request">1280</property>
+                    <property name="height-request">440</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="y">320</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="width-request">6</property>
+            <property name="height-request">480</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="width-request">6</property>
+            <property name="height-request">480</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="x">100</property>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="width-request">6</property>
+            <property name="height-request">480</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="x">180</property>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="width-request">6</property>
+            <property name="height-request">480</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="x">340</property>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="width-request">6</property>
+            <property name="height-request">480</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="x">460</property>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="width-request">6</property>
+            <property name="height-request">480</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="x">540</property>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="width-request">6</property>
+            <property name="height-request">480</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="x">790</property>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="width-request">6</property>
+            <property name="height-request">480</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="x">1040</property>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="width-request">6</property>
+            <property name="height-request">480</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="x">1160</property>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="width-request">1280</property>
+            <property name="height-request">6</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="y">274</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="ButGerenciarConta">
+            <property name="label" translatable="yes">GERENCIAR CONTAS</property>
+            <property name="width-request">200</property>
+            <property name="height-request">40</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="gerenciar_contas" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">1060</property>
+            <property name="y">57</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">FILTROS DE PESQUISA</property>
+            <property name="width-request">150</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="abrir_filtros" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">214</property>
+            <property name="y">174</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">ADICIONAR ITEM</property>
+            <property name="width-request">150</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">393</property>
+            <property name="y">174</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">REMOVER ITEM</property>
+            <property name="width-request">150</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">752</property>
+            <property name="y">177</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">EDITAR ITEM</property>
+            <property name="width-request">150</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">574</property>
+            <property name="y">175</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">ESCOLHER ARQUIVO</property>
+            <property name="width-request">150</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">929</property>
+            <property name="y">178</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
